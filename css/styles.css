@@ -358,36 +358,25 @@ img {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-.project-slide {
+.project-thumb {
   position: relative;
   width: 370px;
   height: 294px;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: hidden;
 }
-.project-slide:hover .overlay {
-  transform: translateX(0);
-}
-.overlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.project-action {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: translateY(100%);
-  transition: transform 250ms ease;
+  display: flex;
+  top: 50%;
+  left: 50%;
 }
-.overlay-text {
+.project-action-text {
   font-weight: 400;
   font-size: 18px;
-  line-height: 28px;
+  line-height: 1.55;
   letter-spacing: 0.03em;
+  width: 322px;
+  height: 168px;
   color: var(--secondary-text-color);
-  margin: 63px 24px;
 }
 .project-wrapper {
   padding: 20px 24px;
