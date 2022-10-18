@@ -63,7 +63,14 @@
             Ефективні рішення для <br />
             вашого бізнесу
           </h1>
-          <button type="button" class="hero-button">Замовити послугу</button>
+          <button data-modal-open type="button" class="hero-button">Замовити послугу</button>
+
+          <div data-modal class="backdrop is-hidden">
+            <div class="modal">
+              <p></p>
+              <button data-modal-close>X</button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -123,28 +130,43 @@
           <h2 class="activity-title">Чим ми займаємося</h2>
           <ul class="list activity-list">
             <li class="activity-item">
-              <img
-                src="./images/activity/box_1.jpg"
-                alt="Людські руки на клавіатурі імітують печатання, інформація відображається на моніторі, праворуч лежать окуляри, блокнот, ручка ти комп'ютерна миша, ліворуч аркуш зі схемою"
-                width="370"
-                height="294"
-              />
+              <div class="activity-thumb">
+                <img
+                  src="./images/activity/box_1.jpg"
+                  alt="Людські руки на клавіатурі імітують печатання, інформація відображається на моніторі, праворуч лежать окуляри, блокнот, ручка ти комп'ютерна миша, ліворуч аркуш зі схемою"
+                  width="370"
+                  height="294"
+                />
+                <div class="activity-item-text">
+                  <p>Десктопні додатки</p>
+                </div>
+              </div>
             </li>
             <li class="activity-item">
-              <img
-                src="./images/activity/box_2.jpg"
-                alt="Людина дивиться у відкритий ноутбук, тримаючи у лівій руці смартфон"
-                width="370"
-                height="294"
-              />
+              <div class="activity-thumb">
+                <img
+                  src="./images/activity/box_2.jpg"
+                  alt="Людина дивиться у відкритий ноутбук, тримаючи у лівій руці смартфон"
+                  width="370"
+                  height="294"
+                />
+                <div class="activity-item-text">
+                  <p>Мобільні додатки</p>
+                </div>
+              </div>
             </li>
             <li class="activity-item">
-              <img
-                src="./images/activity/box_3.jpg"
-                alt="Людська рука тримає планшет на якому зображена кольорова діаграма"
-                width="370"
-                height="294"
-              />
+              <div class="activity-thumb">
+                <img
+                  src="./images/activity/box_3.jpg"
+                  alt="Людська рука тримає планшет на якому зображена кольорова діаграма"
+                  width="370"
+                  height="294"
+                />
+                <div class="activity-item-text">
+                  <p>Дизайнерські рішення</p>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
@@ -430,5 +452,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>

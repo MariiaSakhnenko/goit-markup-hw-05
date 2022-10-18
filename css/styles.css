@@ -11,8 +11,6 @@
 
   --items: 3;
   --indent: 30px;
-
-  /* flex-basis: calc((100% - var(--imdent) * var(--items) - 1)) / var(--items); */
 }
 body {
   font-family: var(--main-font);
@@ -51,8 +49,6 @@ img {
   padding: 0 15px;
 }
 
-/* card set */
-
 /* header */
 .header {
   border-bottom: 1px solid #ececec;
@@ -89,10 +85,27 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--main-text-color);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-item .link:hover,
 .nav-item .link:focus {
   color: var(--accent-text-color);
+}
+.nav-item {
+  position: relative;
+}
+.nav-item .current::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-text-color);
+  border-radius: 2px;
 }
 .nav-item .current {
   color: var(--accent-text-color);
@@ -114,6 +127,9 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--third--text--color);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts-item .link:hover,
 .contacts-item .link:focus {
@@ -167,10 +183,37 @@ img {
   padding: 10px 32px;
   border-radius: 4px;
   border: 0;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-button:hover,
 .hero-button:focus {
   background-color: #188ce8;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 528px;
+  min-height: 581px;
+
+  background-color: var(--secondary-text-color);
 }
 .benefits-list {
   display: flex;
@@ -218,6 +261,27 @@ img {
   color: var(--main-text-color);
   margin-bottom: 50px;
 }
+.activity-thumb {
+  position: relative;
+}
+.activity-item-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--secondary-text-color);
+}
 .team {
   background-color: #f5f4fa;
 }
@@ -259,6 +323,9 @@ img {
   background-color: var(--secondary-text-color);
   color: #afb1b8;
   border-radius: 50%;
+  transition-property: background-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link:hover,
 .social-link:focus {
@@ -306,6 +373,9 @@ img {
   color: #afb1b8;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition-property: color, border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-link:hover,
 .clients-link:focus {
@@ -341,6 +411,9 @@ img {
   padding: 6px 22px;
   border-radius: 4px;
   border: 0;
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-button:hover,
 .filter-button:focus {
@@ -354,9 +427,46 @@ img {
   flex-wrap: wrap;
   gap: 30px;
 }
+.project-item {
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 .project-item:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.project-item:hover .project-essence {
+  opacity: 1;
+}
+.project-thumb {
+  position: relative;
+}
+.project-thumb::before {
+  content: '';
+  width: 100%;
+  height: 294px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(33, 150, 243, 0.9);
+  opacity: 0;
+}
+.project-thumb:hover::before {
+  opacity: 1;
+}
+.project-essence {
+  position: absolute;
+  top: 63px;
+  left: 24px;
+  width: 322px;
+  height: 168px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--secondary-text-color);
+  opacity: 0;
 }
 .project-wrapper {
   padding: 20px 24px;
@@ -414,6 +524,9 @@ img {
   line-height: 24px;
   letter-spacing: 0.03em;
   color: var(--third--text--color);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-contacts .link:hover,
 .footer-contacts .link:focus {
@@ -449,6 +562,9 @@ img {
   background-color: rgba(255, 255, 255, 0.1);
   color: var(--secondary-text-color);
   border-radius: 50%;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social-link:hover,
 .footer-social-link:focus {
