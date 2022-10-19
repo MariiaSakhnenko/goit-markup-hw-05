@@ -260,6 +260,7 @@ img {
   bottom: 40px;
   left: 164px;
 
+  cursor: pointer;
   width: 200px;
   height: 50px;
   font-family: inherit;
@@ -288,9 +289,17 @@ img {
   width: 30px;
   height: 30px;
 
+  cursor: pointer;
   border-radius: 50%;
   border-color: rgba(0, 0, 0, 0.1);
   background-color: var(--secondary-text-color);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-button-close:hover,
+.modal-button-close:focus {
+  color: var(--accent-text-color);
 }
 .benefits-list {
   display: flex;
