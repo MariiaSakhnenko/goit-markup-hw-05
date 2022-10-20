@@ -210,6 +210,7 @@ img {
   background-color: rgba(0, 0, 0, 0.2);
 }
 .is-hidden {
+  visibility: hidden;
   opacity: 0;
   pointer-events: none;
 }
@@ -541,42 +542,22 @@ img {
   position: relative;
   overflow: hidden;
 }
-.project-thumb::before {
-  content: '';
-
-  display: inline-block;
-
+.project-essence {
   position: absolute;
   top: 0;
   left: 0;
+
   width: 100%;
   height: 100%;
+  padding: 63px 24px;
 
-  background-color: rgba(33, 150, 243, 0.9);
-
-  transform: translateY(100%);
-  transition-property: transform;
-  transition-duration: var(--duration);
-  transition-timing-function: var(--timing-function);
-}
-.project-item:hover .project-thumb::before {
-  transform: translateY(0);
-}
-.project-essence {
-  position: absolute;
-  top: 63px;
-  left: 24px;
-
-  width: 322px;
-  height: 168px;
-
-  font-weight: 400;
   font-size: 18px;
   line-height: 1.56;
   letter-spacing: 0.03em;
   color: var(--secondary-text-color);
+  background-color: rgba(33, 150, 243, 0.9);
 
-  transform: translateY(294px);
+  transform: translateY(101%);
   transition-property: transform;
   transition-duration: var(--duration);
   transition-timing-function: var(--timing-function);
